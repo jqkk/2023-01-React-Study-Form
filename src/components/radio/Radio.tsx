@@ -19,7 +19,7 @@ const Label = styled.label({
 });
 
 const Input = styled.input`
-  ${tw`mr-2`}
+  ${tw`mr-2 cursor-pointer`}
 
   &[type=radio] {
     vertical-align: middle;
