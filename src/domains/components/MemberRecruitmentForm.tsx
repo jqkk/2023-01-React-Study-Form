@@ -1,5 +1,5 @@
-import PrivacyRelatedQuestions from './questions/PrivacyRelatedQuestions';
+import TechnologyRelatedQuestions from './questions/TechnologyRelatedQuestions';
 
-const MemberRecruitmentForm = () => <PrivacyRelatedQuestions />;
+const MemberRecruitmentForm = () => <TechnologyRelatedQuestions />;
 
 export default MemberRecruitmentForm;

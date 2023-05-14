@@ -18,6 +18,44 @@ const PrivacyRelatedQuestions = () => (
       <Typography>이름</Typography>
       <Input tw='w-48 lg:w-60' />
     </Question>
+    <Question>
+      <Typography>전공</Typography>
+      <Input tw='w-48 lg:w-60' />
+    </Question>
+    <Question>
+      <Typography>재학 상태</Typography>
+      <div tw='flex gap-6'>
+        <Radio
+          id='attending'
+          name='student_status'
+          value='yes'
+          text='재학 중'
+        />
+        <Radio
+          id='on_leave_of_absence'
+          name='student_status'
+          value='no'
+          text='휴학 중'
+        />
+      </div>
+    </Question>
+    <Question>
+      <Typography>학년(휴학생은 복학할 학년을 선택해 주세요)</Typography>
+      <div tw='flex flex-col gap-3'>
+        <Radio id='1' name='grade' value='1' text='1학년' />
+        <Radio id='2' name='grade' value='2' text='2학년' />
+        <Radio id='3' name='grade' value='3' text='3학년' />
+        <Radio id='4' name='grade' value='4' text='4학년' />
+      </div>
+    </Question>
+    <Question>
+      <Typography>전화번호</Typography>
+      <Input tw='w-48 lg:w-60' />
+    </Question>
+    <Question>
+      <Typography>이메일</Typography>
+      <Input tw='w-48 lg:w-60' />
+    </Question>
   </Container>
 );
 

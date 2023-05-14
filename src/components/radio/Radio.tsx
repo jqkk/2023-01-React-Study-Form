@@ -15,7 +15,7 @@ const Radio = ({ id, name, value, text }: RadioProps) => (
 );
 
 const Label = styled.label({
-  ...tw`text-lg lg:text-xl cursor-pointer`,
+  ...tw`text-lg lg:text-xl cursor-pointer inline-block`,
 });
 
 const Input = styled.input`
