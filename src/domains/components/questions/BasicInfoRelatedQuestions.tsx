@@ -1,8 +1,8 @@
 import tw from 'twin.macro';
 
-import { Input, Radio } from '@/components';
+import { Input, Radio, Textarea } from '@/components';
 
-const BasicInformationRelatedQuestions = () => (
+const BasicInfoRelatedQuestions = () => (
   <Container>
     <Question>
       <Typography>
@@ -81,40 +81,38 @@ const BasicInformationRelatedQuestions = () => (
       </div>
     </Question>
     <Question>
-      <Typography>
-        GDSC 일반 멤버로 지원하게 된 동기를 작성해 주세요 <br /> (700자내외)
-      </Typography>
-      <Input />
+      <Typography>GDSC 일반 멤버로 지원하게 된 동기를 작성해 주세요</Typography>
+      <Textarea />
     </Question>
     <Question>
       <Typography>
         동아리 또는 커뮤니티 또는 스터디를 운영하거나 참여한 경험이 있다면
         적어주세요(선택)
       </Typography>
-      <Input />
+      <Textarea />
     </Question>
     <Question>
       <Typography>
         팀을 이끌어보거나 다른 사람에게 무엇을 가르쳐준 경험에 대해 이야기 해
         주세요
       </Typography>
-      <Input />
+      <Textarea />
     </Question>
     <Question>
       <Typography>
         GDSC 활동으로 이루고 싶은 것들을 간단히 설명해주세요
       </Typography>
-      <Input />
+      <Textarea />
     </Question>
     <Question>
       <Typography>GDSC 활동 중에 어떤 것이 가장 기대되나요?</Typography>
-      <Input />
+      <Textarea />
     </Question>
   </Container>
 );
 
-const Container = tw.div`flex flex-col gap-12`;
+const Container = tw.div`flex flex-col gap-16`;
 const Question = tw.div`flex flex-col gap-3`;
 const Typography = tw.h3`text-xl lg:text-2xl`;
 
-export default BasicInformationRelatedQuestions;
+export default BasicInfoRelatedQuestions;

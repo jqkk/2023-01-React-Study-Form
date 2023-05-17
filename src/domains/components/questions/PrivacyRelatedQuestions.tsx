@@ -59,7 +59,7 @@ const PrivacyRelatedQuestions = () => (
   </Container>
 );
 
-const Container = tw.div`flex flex-col gap-12`;
+const Container = tw.div`flex flex-col gap-16`;
 const Question = tw.div`flex flex-col gap-3`;
 const Typography = tw.h3`text-xl lg:text-2xl`;
 
