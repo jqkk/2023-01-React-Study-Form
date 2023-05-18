@@ -1,3 +1,4 @@
+import React from 'react';
 import tw, { styled } from 'twin.macro';
 
 type RadioProps = {
@@ -7,11 +8,13 @@ type RadioProps = {
   text: string;
 };
 
-const Radio = ({ id, name, value, text }: RadioProps) => (
-  <Label htmlFor={id}>
-    <Input type='radio' id={id} name={name} value={value} />
-    <Text>{text}</Text>
-  </Label>
+const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
+  ({ id, name, value, text }: RadioProps, ref) => (
+    <Label htmlFor={id}>
+      <Input type='radio' id={id} name={name} value={value} ref={ref} />
+      <Text>{text}</Text>
+    </Label>
+  ),
 );
 
 const Label = styled.label({

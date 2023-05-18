@@ -14,15 +14,15 @@ const BasicInfoRelatedQuestions = () => {
           <div tw='flex gap-6'>
             <Radio
               id='can_participate'
-              name='participation'
               value='yes'
               text='예'
+              {...register('participation')}
             />
             <Radio
               id='unable to participate'
-              name='participation'
               value='no'
               text='아니오'
+              {...register('participation')}
             />
           </div>
         }
@@ -33,34 +33,34 @@ const BasicInfoRelatedQuestions = () => {
           <div tw='flex flex-col gap-3'>
             <Radio
               id='one_hour'
-              name='participation_time'
               value='1'
               text='1시간 이내'
+              {...register('participationTime')}
             />
             <Radio
               id='three_hour'
-              name='participation_time'
               value='3'
               text='3시간 이내'
+              {...register('participationTime')}
             />
             <Radio
               id='five_hour'
-              name='participation_time'
               value='5'
               text='5시간 이내'
+              {...register('participationTime')}
             />
             <Radio
               id='tem_hour'
-              name='participation_time'
               value='10'
               text='10시간 이내'
+              {...register('participationTime')}
             />
             <div tw='flex gap-3'>
               <Radio
                 id='etc'
-                name='participation_time'
                 value='etc'
                 text='기타 : '
+                {...register('participationTime')}
               />
               <Input tw='flex-1' />
             </div>
@@ -73,15 +73,15 @@ const BasicInfoRelatedQuestions = () => {
           <div tw='flex gap-6'>
             <Radio
               id='can_participate_seminar'
-              name='seminar_participation'
               value='yes'
               text='예'
+              {...register('seminarParticipation')}
             />
             <Radio
               id='unable_to_participate_seminar'
-              name='seminar_participation'
               value='no'
               text='아니오'
+              {...register('seminarParticipation')}
             />
           </div>
         }

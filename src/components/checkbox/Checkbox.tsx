@@ -1,3 +1,4 @@
+import React from 'react';
 import tw, { styled } from 'twin.macro';
 
 type CheckboxProps = {
@@ -7,11 +8,13 @@ type CheckboxProps = {
   text: string;
 };
 
-const Checkbox = ({ id, name, value, text }: CheckboxProps) => (
-  <Label htmlFor={id}>
-    <Input type='checkbox' id={id} name={name} value={value} />
-    <Text>{text}</Text>
-  </Label>
+const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ id, name, value, text }, ref) => (
+    <Label htmlFor={id}>
+      <Input type='checkbox' id={id} name={name} value={value} ref={ref} />
+      <Text>{text}</Text>
+    </Label>
+  ),
 );
 
 const Label = styled.label({
