@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+import { FormProvider, useForm } from 'react-hook-form';
 import tw from 'twin.macro';
 
 import { Button } from '@/components';
@@ -15,6 +16,7 @@ const Steps = [
 ];
 
 const MemberRecruitmentForm = () => {
+  const methods = useForm();
   const [step, setStep] = useAtom(stepAtom);
 
   const handleNextStep = () => {
@@ -25,10 +27,14 @@ const MemberRecruitmentForm = () => {
     setStep(step - 1);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    methods.handleSubmit((data) => {
+      console.log(data);
+    })();
+  };
 
   return (
-    <>
+    <FormProvider {...methods}>
       {Steps[step]}
       <ButtonContainer>
         <Button onClick={handlePreviousStep} disabled={step === 0}>
@@ -40,7 +46,7 @@ const MemberRecruitmentForm = () => {
           <Button onClick={handleNextStep}>다음</Button>
         )}
       </ButtonContainer>
-    </>
+    </FormProvider>
   );
 };
 

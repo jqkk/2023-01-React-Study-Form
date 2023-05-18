@@ -1,13 +1,13 @@
-import { useRef } from 'react';
+import React from 'react';
 import tw, { styled } from 'twin.macro';
 
-type TextareaProps = {
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-};
+import { useForwardRef } from '@/hooks';
 
-const Textarea = ({ value, onChange }: TextareaProps) => {
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+const Textarea = React.forwardRef<
+  HTMLTextAreaElement,
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>
+>(({ value, onChange, ...others }, ref) => {
+  const textareaRef = useForwardRef<HTMLTextAreaElement>(ref);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange?.(e);
@@ -23,9 +23,10 @@ const Textarea = ({ value, onChange }: TextareaProps) => {
       onChange={handleChange}
       rows={1}
       value={value}
+      {...others}
     />
   );
-};
+});
 
 const StyledTextarea = styled.textarea(() => ({
   ...tw`w-full border-b-[3px] border-black focus-visible:outline-none text-lg lg:text-xl leading-none resize-none min-h-[24px]`,
