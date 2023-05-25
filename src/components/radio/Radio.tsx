@@ -1,17 +1,21 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
-type RadioProps = {
-  id: string;
-  name: string;
-  value: string;
+type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
   text: string;
 };
 
 const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
-  ({ id, name, value, text }: RadioProps, ref) => (
+  ({ id, name, value, text, ...others }, ref) => (
     <Label htmlFor={id}>
-      <Input type='radio' id={id} name={name} value={value} ref={ref} />
+      <Input
+        type='radio'
+        id={id}
+        name={name}
+        value={value}
+        ref={ref}
+        {...others}
+      />
       <Text>{text}</Text>
     </Label>
   ),

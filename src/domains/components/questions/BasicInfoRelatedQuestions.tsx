@@ -19,7 +19,7 @@ const BasicInfoRelatedQuestions = () => {
               {...register('participation')}
             />
             <Radio
-              id='unable to participate'
+              id='unable_to_participate'
               value='no'
               text='아니오'
               {...register('participation')}
@@ -50,7 +50,7 @@ const BasicInfoRelatedQuestions = () => {
               {...register('participationTime')}
             />
             <Radio
-              id='tem_hour'
+              id='ten_hour'
               value='10'
               text='10시간 이내'
               {...register('participationTime')}
@@ -62,7 +62,7 @@ const BasicInfoRelatedQuestions = () => {
                 text='기타 : '
                 {...register('participationTime')}
               />
-              <Input tw='flex-1' />
+              <Input tw='flex-1' {...register('participationTime/etc')} />
             </div>
           </div>
         }

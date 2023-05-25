@@ -1,17 +1,21 @@
 import React from 'react';
 import tw, { styled } from 'twin.macro';
 
-type CheckboxProps = {
-  id: string;
-  name: string;
-  value: string;
+type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   text: string;
 };
 
 const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ id, name, value, text }, ref) => (
+  ({ id, name, value, text, ...others }, ref) => (
     <Label htmlFor={id}>
-      <Input type='checkbox' id={id} name={name} value={value} ref={ref} />
+      <Input
+        type='checkbox'
+        id={id}
+        name={name}
+        value={value}
+        ref={ref}
+        {...others}
+      />
       <Text>{text}</Text>
     </Label>
   ),

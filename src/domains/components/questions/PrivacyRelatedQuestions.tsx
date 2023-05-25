@@ -59,24 +59,9 @@ const PrivacyRelatedQuestions = () => {
         contents={
           <div tw='flex flex-col gap-3'>
             <Radio id='1' value='1' text='1학년' {...register('grade')} />
-            <Radio
-              id='2'
-              value='2'
-              text='2학년'
-              {...register('studentStatus')}
-            />
-            <Radio
-              id='3'
-              value='3'
-              text='3학년'
-              {...register('studentStatus')}
-            />
-            <Radio
-              id='4'
-              value='4'
-              text='4학년'
-              {...register('studentStatus')}
-            />
+            <Radio id='2' value='2' text='2학년' {...register('grade')} />
+            <Radio id='3' value='3' text='3학년' {...register('grade')} />
+            <Radio id='4' value='4' text='4학년' {...register('grade')} />
           </div>
         }
       />
